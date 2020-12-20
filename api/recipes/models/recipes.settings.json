@@ -1,0 +1,44 @@
+{
+  "kind": "collectionType",
+  "collectionName": "recipes",
+  "info": {
+    "name": "Recettes",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "Description": {
+      "type": "richtext"
+    },
+    "Nom": {
+      "type": "string"
+    },
+    "Ingredients": {
+      "columnName": "ingredients",
+      "collection": "ingredients",
+      "via": "Recettes",
+      "dominant": true
+    },
+    "Temps": {
+      "type": "integer",
+      "default": 30
+    },
+    "Personnes": {
+      "type": "integer",
+      "default": 4
+    },
+    "Niveau": {
+      "type": "enumeration",
+      "enum": [
+        "Facile",
+        "Modere",
+        "Complique"
+      ],
+      "default": "Facile"
+    }
+  }
+}
